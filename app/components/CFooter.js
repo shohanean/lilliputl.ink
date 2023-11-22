@@ -1,6 +1,7 @@
 "use client";
 
 import { Layout, Space } from "antd";
+import { HeartTwoTone } from '@ant-design/icons';
 const { Footer } = Layout;
 
 const footerStyle = {
@@ -21,7 +22,7 @@ export default function CFooter() {
       >
         <Layout>
           <Footer style={footerStyle}>
-            Short Link ©2023 Created by Shohan Hossain Ean
+            ©2023 Made with <HeartTwoTone twoToneColor="#eb2f96" /> by Shohan Hossain Ean
           </Footer>          
         </Layout>
       </Space>
