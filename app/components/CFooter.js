@@ -5,8 +5,8 @@ const { Footer } = Layout;
 
 const footerStyle = {
   textAlign: "center",
-  color: "#fff",
-  backgroundColor: "#7dbcea",
+  color: "#000",
+  backgroundColor: "#f2f2f2",
 };
 
 export default function CFooter() {
@@ -21,7 +21,7 @@ export default function CFooter() {
       >
         <Layout>
           <Footer style={footerStyle}>
-            Ant Design ©2023 Created by Ant UED
+            Short Link ©2023 Created by Shohan Hossain Ean
           </Footer>          
         </Layout>
       </Space>

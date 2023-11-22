@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, Flex, Layout, Space, Menu } from "antd";
+import { Typography, Card, Col, Row, Flex, Layout, Space } from "antd";
 const { Header } = Layout;
 import Link from "next/link";
 
@@ -10,36 +10,10 @@ const headerStyle = {
   height: 64,
   paddingInline: 50,
   lineHeight: "64px",
-  backgroundColor: "#7dbcea",
+  backgroundColor: "#f2f2f2",
 };
 
 export default function CHeader() {
-  const navarray = [
-    {
-      title: "Home",
-    },
-    {
-      title: "About",
-    },
-    {
-      title: "Contact",
-    },
-    {
-      title: "Contact",
-    },
-    {
-      title: "Contact",
-    },
-    {
-      title: "Contact",
-    },
-    {
-      title: "Contact",
-    },
-    {
-      title: "Contact",
-    },
-  ];
   return (
     <>
       <Space
@@ -50,28 +24,26 @@ export default function CHeader() {
         size={[0, 48]}
       >
         <Layout>
-          <Header style={{ display: "flex", alignItems: "center" }}>
-            <div className="demo-logo" />
-            <Menu
-              theme="dark"
-              mode="horizontal"
-              defaultSelectedKeys={["0"]}
-              items={navarray.map((abc, index) => {
-                const key = index;
-                return {
-                  key,
-                  label: `${abc.title}`,
-                };
-              })}
-            />
-          </Header>
-          <Header style={headerStyle}>
+          <Row gutter={16}>
+            <Col span={12} offset={6} style={{ paddingBottom: "25px" }}>
+              <Card bordered={false} style={{ textAlign: "center" }}>
+                Short URL
+              </Card>
+            </Col>
+          </Row>
+          {/* <Header style={headerStyle}>
             <Flex gap="small" wrap="wrap">
-              <Link type="link" href="/">Home</Link>
-              <Link type="link" href="/about">About</Link>
-              <Link type="link" href="/contact">Contact</Link>
+              <Link type="link" href="/">
+                Home
+              </Link>
+              <Link type="link" href="/about">
+                About
+              </Link>
+              <Link type="link" href="/contact">
+                Contact
+              </Link>
             </Flex>
-          </Header>
+          </Header> */}
         </Layout>
       </Space>
     </>
