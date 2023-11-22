@@ -6,7 +6,7 @@ const { Footer } = Layout;
 const footerStyle = {
   textAlign: "center",
   color: "#000",
-  backgroundColor: "#f2f2f2",
+  backgroundColor: "#f5f5f5",
 };
 
 export default function CFooter() {
