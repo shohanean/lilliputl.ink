@@ -1,12 +1,12 @@
 "use client";
-import { Input, Card, Col, Row } from "antd";
+import { Flex, Input, Card, Col, Row } from "antd";
 const { Search } = Input;
 
 export default function Home() {
   return (
     <>
-      <Row gutter={16}>
-        <Col span={12} offset={6}>
+      <Row gutter={16} justify="center">
+        <Col xs={24} xl={12}>
           <Card title="Paste the URL to be shortened" bordered={false}>
             <Search
               style={{ paddingBottom: "25px" }}
@@ -19,8 +19,8 @@ export default function Home() {
           </Card>
         </Col>
       </Row>
-      <Row gutter={16}>
-        <Col span={12} offset={6} style={{ paddingTop: "25px" }}>
+      <Row gutter={16} justify="center">
+        <Col xs={24} xl={12} style={{ paddingTop: "25px" }}>
           <Card title="Want More? Try Premium Features!" bordered={false}>
             Custom short links, powerful dashboard, detailed analytics, API, UTM
             builder, QR codes, browser extension, app integrations and support
