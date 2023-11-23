@@ -27,18 +27,15 @@ export default function CHeader() {
             <Col xs={24} xl={12} style={{ paddingBottom: "25px" }}>
               <Card bordered={false} style={{ textAlign: "center" }}>
                 <Link type="link" href="/">
-                  {pathname === '/' && <CaretRightOutlined />}
-                  <Text>Home</Text>
+                  <Text keyboard={pathname === '/' ? true : false}>Home</Text>
                 </Link>
                 <Divider type="vertical" />
                 <Link type="link" href="/about">
-                  {pathname === '/about' && <CaretRightOutlined />}
-                  <Text>About</Text>
+                  <Text keyboard={ pathname === '/about' ? true:false}>About</Text>
                 </Link>
                 <Divider type="vertical" />
                 <Link type="link" href="/contact">
-                  {pathname === '/contact' && <CaretRightOutlined />}
-                  <Text>Contact</Text>
+                  <Text keyboard={pathname === '/contact' ? true : false}>Contact</Text>
                 </Link>
               </Card>
             </Col>

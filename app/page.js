@@ -1,10 +1,35 @@
 "use client";
-import { Typography, Flex, Input, Card, Col, Row } from "antd";
+import { Typography, Collapse, Input, Card, Col, Row } from "antd";
 import { LikeTwoTone, InsuranceTwoTone, BugTwoTone, CarTwoTone, ContactsTwoTone, GiftTwoTone } from '@ant-design/icons';
 const { Title, Text } = Typography;
 const { Search } = Input;
 
+const text = `
+  A dog is a type of domesticated animal.
+  Known for its loyalty and faithfulness,
+  it can be found as a welcome guest in many households across the world.
+`;
+const items = [
+  {
+    key: '1',
+    label: 'Is it free?',
+    children: <p>{text}</p>,
+  },
+  {
+    key: '2',
+    label: 'Do I need subscription?',
+    children: <p>{text}</p>,
+  },
+  {
+    key: '3',
+    label: 'How many days this link will be activated?',
+    children: <p>{text}</p>,
+  },
+];
 export default function Home() {
+  // const dynamicData = await fetch(`http://localhost:3000/api/faqs`, { cache: 'no-store' })
+  
+  // console.log(dynamicData.array);
   return (
     <>
       <Row gutter={16} justify="center">
@@ -45,6 +70,14 @@ export default function Home() {
           </Text>
         </Col>
       </Row>
+      <Row gutter={16} justify="center">
+        <Col xs={24} xl={12}>
+          <Title level={3}>FAQ</Title>
+          <Text>
+            <Collapse items={items} defaultActiveKey={['1']} />
+          </Text>
+        </Col>
+      </Row>
       <Row gutter={16} justify="center" style={{ paddingTop: "45px" }}>
         <Col xs={24} xl={6} direction="vertical" align="center">          
           <LikeTwoTone style={{ fontSize: '500%' }} />
@@ -55,14 +88,14 @@ export default function Home() {
         </Col>
         <Col xs={24} xl={6} direction="vertical" align="center">          
           <InsuranceTwoTone style={{ fontSize: '500%' }} />
-          <Title level={3}>Easy</Title>
+          <Title level={3}>Lang</Title>
           <Text>
             Your shortened URLs can be used in publications, documents, advertisements, blogs
           </Text>
         </Col>
         <Col xs={24} xl={6} direction="vertical" align="center">          
           <BugTwoTone style={{ fontSize: '500%' }} />
-          <Title level={3}>Easy</Title>
+          <Title level={3}>Bug</Title>
           <Text>
             Your shortened URLs can be used in publications, documents, advertisements, blogs
           </Text>
@@ -71,21 +104,21 @@ export default function Home() {
       <Row gutter={16} justify="center" style={{ paddingTop: "45px" }}>
         <Col xs={24} xl={6} direction="vertical" align="center">          
           <CarTwoTone style={{ fontSize: '500%' }} />
-          <Title level={3}>Easy</Title>
+          <Title level={3}>Drive</Title>
           <Text>
             Your shortened URLs can be used in publications, documents, advertisements, blogs
           </Text>
         </Col>
         <Col xs={24} xl={6} direction="vertical" align="center">          
           <ContactsTwoTone style={{ fontSize: '500%' }} />
-          <Title level={3}>Easy</Title>
+          <Title level={3}>Book</Title>
           <Text>
             Your shortened URLs can be used in publications, documents, advertisements, blogs
           </Text>
         </Col>
         <Col xs={24} xl={6} direction="vertical" align="center">          
           <GiftTwoTone style={{ fontSize: '500%' }} />
-          <Title level={3}>Easy</Title>
+          <Title level={3}>Gift</Title>
           <Text>
             Your shortened URLs can be used in publications, documents, advertisements, blogs
           </Text>

@@ -1,6 +1,7 @@
 "use client";
 
-import { Layout, Space } from "antd";
+import { Layout, Space, FloatButton } from "antd";
+
 import { HeartTwoTone } from '@ant-design/icons';
 const { Footer } = Layout;
 
@@ -21,6 +22,7 @@ export default function CFooter() {
         size={[0, 48]}
       >
         <Layout>
+          <FloatButton.BackTop />
           <Footer style={footerStyle}>
             ©2023 Made with <HeartTwoTone twoToneColor="#eb2f96" /> by Shohan Hossain Ean
           </Footer>          
