@@ -1,35 +1,21 @@
 "use client";
 import { Typography, Collapse, Input, Card, Col, Row } from "antd";
-import { LikeTwoTone, InsuranceTwoTone, BugTwoTone, CarTwoTone, ContactsTwoTone, GiftTwoTone } from '@ant-design/icons';
+import {
+  LikeTwoTone,
+  InsuranceTwoTone,
+  BugTwoTone,
+  CarTwoTone,
+  ContactsTwoTone,
+  GiftTwoTone,
+} from "@ant-design/icons";
 const { Title, Text } = Typography;
 const { Search } = Input;
 
-const text = `
-  A dog is a type of domesticated animal.
-  Known for its loyalty and faithfulness,
-  it can be found as a welcome guest in many households across the world.
-`;
-const items = [
-  {
-    key: '1',
-    label: 'Is it free?',
-    children: <p>{text}</p>,
-  },
-  {
-    key: '2',
-    label: 'Do I need subscription?',
-    children: <p>{text}</p>,
-  },
-  {
-    key: '3',
-    label: 'How many days this link will be activated?',
-    children: <p>{text}</p>,
-  },
-];
-export default function Home() {
-  // const dynamicData = await fetch(`http://localhost:3000/api/faqs`, { cache: 'no-store' })
-  
-  // console.log(dynamicData.array);
+export default async function Home() {
+  const items = await fetch(`http://localhost:3000/api/faqs`, {
+    cache: "no-store",
+  }).then((res) => res.json());
+
   return (
     <>
       <Row gutter={16} justify="center">
@@ -58,7 +44,11 @@ export default function Home() {
         <Col xs={24} xl={12}>
           <Title level={3}>Simple and fast URL shortener!</Title>
           <Text>
-            ShortURL allows to shorten long links from Instagram, Facebook, YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and sites. Just paste the long URL and click the Shorten URL button. On the next page, copy the shortened URL and share it on sites, chat and emails. After shortening the URL, check how many clicks it received.
+            ShortURL allows to shorten long links from Instagram, Facebook,
+            YouTube, Twitter, Linked In, WhatsApp, TikTok, blogs and sites. Just
+            paste the long URL and click the Shorten URL button. On the next
+            page, copy the shortened URL and share it on sites, chat and emails.
+            After shortening the URL, check how many clicks it received.
           </Text>
         </Col>
       </Row>
@@ -66,7 +56,10 @@ export default function Home() {
         <Col xs={24} xl={12}>
           <Title level={3}>Shorten, share and track</Title>
           <Text>
-            Your shortened URLs can be used in publications, documents, advertisements, blogs, forums, instant messages, and other locations. Track statistics for your business and projects by monitoring the number of hits from your URL with our click counter.
+            Your shortened URLs can be used in publications, documents,
+            advertisements, blogs, forums, instant messages, and other
+            locations. Track statistics for your business and projects by
+            monitoring the number of hits from your URL with our click counter.
           </Text>
         </Col>
       </Row>
@@ -74,53 +67,59 @@ export default function Home() {
         <Col xs={24} xl={12}>
           <Title level={3}>FAQ</Title>
           <Text>
-            <Collapse items={items} defaultActiveKey={['1']} />
+            <Collapse items={items} defaultActiveKey={["1"]} />
           </Text>
         </Col>
       </Row>
       <Row gutter={16} justify="center" style={{ paddingTop: "45px" }}>
-        <Col xs={24} xl={6} direction="vertical" align="center">          
-          <LikeTwoTone style={{ fontSize: '500%' }} />
+        <Col xs={24} xl={6} direction="vertical" align="center">
+          <LikeTwoTone style={{ fontSize: "500%" }} />
           <Title level={3}>Easy</Title>
           <Text>
-            Your shortened URLs can be used in publications, documents, advertisements, blogs
+            Your shortened URLs can be used in publications, documents,
+            advertisements, blogs
           </Text>
         </Col>
-        <Col xs={24} xl={6} direction="vertical" align="center">          
-          <InsuranceTwoTone style={{ fontSize: '500%' }} />
+        <Col xs={24} xl={6} direction="vertical" align="center">
+          <InsuranceTwoTone style={{ fontSize: "500%" }} />
           <Title level={3}>Lang</Title>
           <Text>
-            Your shortened URLs can be used in publications, documents, advertisements, blogs
+            Your shortened URLs can be used in publications, documents,
+            advertisements, blogs
           </Text>
         </Col>
-        <Col xs={24} xl={6} direction="vertical" align="center">          
-          <BugTwoTone style={{ fontSize: '500%' }} />
+        <Col xs={24} xl={6} direction="vertical" align="center">
+          <BugTwoTone style={{ fontSize: "500%" }} />
           <Title level={3}>Bug</Title>
           <Text>
-            Your shortened URLs can be used in publications, documents, advertisements, blogs
+            Your shortened URLs can be used in publications, documents,
+            advertisements, blogs
           </Text>
         </Col>
       </Row>
       <Row gutter={16} justify="center" style={{ paddingTop: "45px" }}>
-        <Col xs={24} xl={6} direction="vertical" align="center">          
-          <CarTwoTone style={{ fontSize: '500%' }} />
+        <Col xs={24} xl={6} direction="vertical" align="center">
+          <CarTwoTone style={{ fontSize: "500%" }} />
           <Title level={3}>Drive</Title>
           <Text>
-            Your shortened URLs can be used in publications, documents, advertisements, blogs
+            Your shortened URLs can be used in publications, documents,
+            advertisements, blogs
           </Text>
         </Col>
-        <Col xs={24} xl={6} direction="vertical" align="center">          
-          <ContactsTwoTone style={{ fontSize: '500%' }} />
+        <Col xs={24} xl={6} direction="vertical" align="center">
+          <ContactsTwoTone style={{ fontSize: "500%" }} />
           <Title level={3}>Book</Title>
           <Text>
-            Your shortened URLs can be used in publications, documents, advertisements, blogs
+            Your shortened URLs can be used in publications, documents,
+            advertisements, blogs
           </Text>
         </Col>
-        <Col xs={24} xl={6} direction="vertical" align="center">          
-          <GiftTwoTone style={{ fontSize: '500%' }} />
+        <Col xs={24} xl={6} direction="vertical" align="center">
+          <GiftTwoTone style={{ fontSize: "500%" }} />
           <Title level={3}>Gift</Title>
           <Text>
-            Your shortened URLs can be used in publications, documents, advertisements, blogs
+            Your shortened URLs can be used in publications, documents,
+            advertisements, blogs
           </Text>
         </Col>
       </Row>
