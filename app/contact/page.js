@@ -1,34 +1,17 @@
 "use client";
-const mongoose = require("mongoose");
-import { Card, Col, Row, Button, Checkbox, Form, Input } from "antd";
-import Contact from "../api/model/contacts";
+import { Card, Col, Row, Button, Form, Input } from "antd";
 
 const { TextArea } = Input;
+
+const onFinish = (values) => {
+  console.log("Success:", values);
+};
 
 const onFinishFailed = (errorInfo) => {
   console.log("Failed:", errorInfo);
 };
 
 export default function contact() {
-  const connection =
-    "mongodb+srv://hossainshohan1:n3E33d0p1IMVBkZc@cluster0.puyt7ir.mongodb.net/?retryWrites=true&w=majority";
-  const onFinish = (values) => {
-    console.log("GOOD:", values);
-    mongoose
-
-      .connect(connection, {
-        useNewUrlParser: true,
-
-        useUnifiedTopology: true,
-
-        useFindAndModify: false,
-      })
-
-      .then(() => console.log("Database Connected Successfully"))
-
-      .catch((err) => console.log(err));
-  };
-
   return (
     <>
       <Row gutter={16} justify="center">
